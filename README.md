@@ -1,16 +1,28 @@
-## Hi there 👋
+# Hi, I'm Nayan
 
-<!--
-**Gigaberg/Gigaberg** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+BTech CSE-AIML Student
 
-Here are some ideas to get you started:
+## Interests
+- Artificial Intelligence
+- Computer Vision
+- Embedded Systems
+- Full Stack Development
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Featured Projects
+### CSI Dashboard
+Wi-Fi CSI based motion detection system using ESP32 devices.
+
+### EnerPredict AI
+ML pipeline for residential energy demand and solar generation forecasting.
+
+### Smart Campus Lost & Found
+Campus-wide lost-and-found platform.
+
+### CivicTrack
+Computer vision system for civic issue reporting.
+
+## Tech Stack
+Python • JavaScript • React • Flask • FastAPI • ESP32 • Linux
+
+## Currently Learning
+Docker, DSA, System Design

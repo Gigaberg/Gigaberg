@@ -19,7 +19,7 @@ ML pipeline for residential energy demand and solar generation forecasting.
 Campus-wide lost-and-found platform.
 
 ### CivicTrack
-Computer vision system for civic issue reporting.
+Computer vision system for automated civic issue detection and reporting.
 
 ## Tech Stack
 Python • JavaScript • React • Flask • FastAPI • ESP32 • Linux

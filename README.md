@@ -204,7 +204,7 @@ I'm currently exploring **RAG-based hallucination detection, explainability, loc
 
 <div align="center">
 
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg\&theme=tokyo-night\&hide_border=true\&bg_color=0D1117\&color=00D9FF\&line=00D9FF\&point=C9D1D9\&area=true\&area_color=001a2e)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 </div>
 

@@ -7,7 +7,7 @@ random.seed(42)
 WIDTH = 1000
 HEIGHT = 220
 
-# Generate well-distributed nodes
+# Generate constellation nodes
 nodes = []
 
 # Left side nodes (behind text, sparse)
@@ -56,8 +56,6 @@ def build_svg(theme='dark'):
         node_fill = "#00D9FF"
         line_stroke = "#00D9FF"
         line_base_opacity = 0.22
-        cursor_color = "#00D9FF"
-        glow_color = "#00D9FF"
     else:
         bg = "#FFFFFF"
         text_primary = "#1F2328"
@@ -67,8 +65,6 @@ def build_svg(theme='dark'):
         node_fill = "#4B5563"
         line_stroke = "#6B7280"
         line_base_opacity = 0.28
-        cursor_color = "#0969DA"
-        glow_color = "#6B7280"
 
     edges_lines = []
     for a, b in edges:
@@ -91,7 +87,7 @@ def build_svg(theme='dark'):
             f'</circle>'
         )
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" height="{HEIGHT}">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" height="{HEIGHT}">
   <defs>
     <style>
       .font-mono {{
@@ -108,6 +104,23 @@ def build_svg(theme='dark'):
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+
+    <!-- Typing animation paths -->
+    <path id="type-path-0-{theme}">
+      <animate id="t0-{theme}" attributeName="d" begin="0s;t2-{theme}.end" dur="5s" fill="remove"
+        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
+        keyTimes="0; 0.50; 0.85; 1" />
+    </path>
+    <path id="type-path-1-{theme}">
+      <animate id="t1-{theme}" attributeName="d" begin="t0-{theme}.end" dur="4.5s" fill="remove"
+        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
+        keyTimes="0; 0.50; 0.85; 1" />
+    </path>
+    <path id="type-path-2-{theme}">
+      <animate id="t2-{theme}" attributeName="d" begin="t1-{theme}.end" dur="5.5s" fill="remove"
+        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
+        keyTimes="0; 0.50; 0.85; 1" />
+    </path>
   </defs>
 
   <!-- Background -->
@@ -122,7 +135,7 @@ def build_svg(theme='dark'):
   </g>
 
   <!-- Header Content -->
-  <!-- Top Row: Waving Hand + Main Greeting locked on the exact same baseline -->
+  <!-- Top Row: Waving Hand aligned at y=72 -->
   <g transform="translate(50, 72)">
     <text x="0" y="0" font-size="34" class="emoji-font">
       👋
@@ -134,10 +147,26 @@ def build_svg(theme='dark'):
         repeatCount="indefinite"
       />
     </text>
-    <text x="50" y="0" class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
-      Hi there! I'm <tspan fill="{text_accent}">Nayan Utkarsh</tspan><tspan fill="{cursor_color}">|<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/></tspan>
-    </text>
   </g>
+
+  <!-- Animated Typing Texts (Chained in Sequence) -->
+  <text class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
+    <textPath href="#type-path-0-{theme}" xlink:href="#type-path-0-{theme}">
+      Hi there! I'm Nayan Utkarsh |
+    </textPath>
+  </text>
+
+  <text class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">
+    <textPath href="#type-path-1-{theme}" xlink:href="#type-path-1-{theme}">
+      Hi there! I'm Gigaberg |
+    </textPath>
+  </text>
+
+  <text class="font-mono" font-size="28" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
+    <textPath href="#type-path-2-{theme}" xlink:href="#type-path-2-{theme}">
+      AI/ML Engineer &amp; Systems Builder |
+    </textPath>
+  </text>
 
   <!-- Role / Subtitle -->
   <text x="100" y="108" class="font-mono" font-size="14.5" font-weight="600" fill="{text_secondary}">
@@ -171,4 +200,4 @@ with open('assets/header-dark.svg', 'w', encoding='utf-8') as f:
 with open('assets/header-light.svg', 'w', encoding='utf-8') as f:
     f.write(build_svg('light'))
 
-print("Updated and regenerated assets/header-dark.svg and assets/header-light.svg successfully!")
+print("Generated dynamic typing header SVGs successfully!")

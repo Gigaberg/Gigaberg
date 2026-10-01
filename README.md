@@ -1,28 +1,223 @@
-# Hi, I'm Nayan
+<div align="center">
 
-BTech CSE-AIML Student
+<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="32px">   **Hey, I'm Nayan Utkarsh**
 
-## Interests
-- Artificial Intelligence
-- Computer Vision
-- Embedded Systems
-- Full Stack Development
+### AI/ML Engineer  ×  Full-Stack Developer  ×  AI Builder
 
-## Featured Projects
-### CSI Dashboard
-Wi-Fi CSI based motion detection system using ESP32 devices.
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code\&weight=600\&size=21\&pause=1100\&color=00D9FF\&center=true\&vCenter=true\&width=700\&lines=AI+%26+ML+Engineer;Full-Stack+Developer;LLM+%26+RAG+Explorer;Agentic+AI+Builder;Explainable+AI+Explorer;Building+AI-powered+systems.)](https://git.io/typing-svg)
 
-### EnerPredict AI
-ML pipeline for residential energy demand and solar generation forecasting.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
+[![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:nayanpanday01@gmail.com) 
+[![Views](https://komarev.com/ghpvc/?username=Gigaberg\&color=00D9FF\&style=for-the-badge\&label=PROFILE+VIEWS)](https://github.com/Gigaberg)
 
-### Smart Campus Lost & Found
-Campus-wide lost-and-found platform.
+</div>
 
-### CivicTrack
-Computer vision system for automated civic issue detection and reporting.
+---
 
-## Tech Stack
-Python • JavaScript • React • Flask • FastAPI • ESP32 • Linux
+## 🖥️ Status Check
 
-## Currently Learning
-Docker, DSA, System Design
+```yaml
+📍 Location    : Bengaluru, India
+🎓 Degree      : B.Tech CSE (AI & ML) · DSU · Class of 2028
+🔭 Building    : XAI + RAG systems for hallucination detection
+🧠 Deep in     : Local AI, LLMs, RAG & Agentic AI
+💡 Exploring   : Explainable AI, NLP & Machine Learning
+⚡ Fun fact    : Built hardware prototypes with ESP32-S3 boards
+🎮 Off-screen  : Gaming, shows & movies
+🌍 Dream       : Build a stable career, live well, and support my family
+```
+
+---
+
+## Profile Details
+
+<div align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Gigaberg&theme=github_dark" />
+</div>
+
+---
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+
+[![Trophies](https://github-profile-trophy.vercel.app/?username=Gigaberg\&theme=tokyonight\&no-frame=true\&row=1\&column=7\&margin-w=6\&margin-h=6)](https://github.com/ryo-ma/github-profile-trophy)
+
+</div>
+
+---
+
+## 🔥 Featured Projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 📡 [Techflix — CSI Dashboard](https://github.com/Gigaberg/csi-dashboard)
+
+**Camera-Free Wi-Fi CSI Presence & Activity Detection**
+
+A real-time sensing system using two ESP32-S3 boards to capture Wi-Fi Channel State Information, detect movement, classify activities, and stream results to a live dashboard. Includes variance-based detection, fall detection, person identification, Telegram alerts and remote access.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square\&logo=python\&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square\&logo=fastapi\&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32--S3-E7352C?style=flat-square)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square\&logo=chart.js\&logoColor=white)
+
+</td>
+<td width="50%" valign="top">
+
+### 🌫️ [Bengaluru AQI](https://github.com/Gigaberg/Bengaluru-AQI)
+
+**AQI Forecasting + Explainable AI Platform**
+
+An end-to-end ML and XAI platform for monitoring, forecasting and explaining air-quality behaviour across Bengaluru. Uses historical CPCB data, live WAQI data, multiple predictive models, SHAP explanations and an interactive policy simulation environment.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square\&logo=python\&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=flat-square\&logo=next.js\&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square\&logo=fastapi\&logoColor=white)
+![SHAP](https://img.shields.io/badge/XAI-SHAP-00D9FF?style=flat-square)
+![XGBoost](https://img.shields.io/badge/XGBoost-EC3E2A?style=flat-square)
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### ⚡ [EnerPredict AI](https://github.com/Gigaberg/EnerPredict-AI)
+
+**AI-Driven Household Energy & Solar Prediction**
+
+An ML-based application that predicts electricity demand and solar generation, estimates solar offset and surplus energy, and compares multiple regression models through an interactive dashboard.
+
+**45,345 records · 17 features**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square\&logo=python\&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square\&logo=fastapi\&logoColor=white)
+![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square\&logo=scikit-learn\&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-EC3E2A?style=flat-square)
+
+</td>
+<td width="50%" valign="top">
+
+### 🎓 [Smart Campus Lost & Found](https://github.com/Gigaberg/smart-campus-lost-found)
+
+**Full-Stack Campus Lost & Found Platform**
+
+A full-stack application for reporting and recovering lost items on campus. Includes authentication, image uploads, search/filtering, automatic lost↔found matching suggestions, messaging and recovery status tracking.
+
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square\&logo=react\&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square\&logo=node.js\&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square\&logo=mongodb\&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square\&logo=jsonwebtokens\&logoColor=white)
+
+</td>
+</tr>
+</table>
+
+> Also: **[Sukuna CV](https://github.com/Gigaberg/Sukuna_cv)** — a Three.js + MediaPipe computer-vision experiment featuring real-time hand-gesture detection, 3D rendering, post-processing and interactive gesture-triggered effects.
+
+---
+
+## 💻 Tech Stack
+
+<div align="center">
+
+**Languages**
+
+[![Languages](https://skillicons.dev/icons?i=python,c,mysql\&theme=dark)](https://skillicons.dev)
+
+**AI & Machine Learning**
+
+[![AI/ML](https://skillicons.dev/icons?i=pytorch,opencv,huggingface\&theme=dark)](https://skillicons.dev)
+
+**Web**
+
+[![Web](https://skillicons.dev/icons?i=nextjs,react,flask\&theme=dark)](https://skillicons.dev)
+
+**Databases & Infrastructure**
+
+[![Data/Infra](https://skillicons.dev/icons?i=mongodb,mysql,docker,git,github\&theme=dark)](https://skillicons.dev)
+
+**LLM / AI Systems**
+
+![Llama.cpp](https://img.shields.io/badge/Llama.cpp-000000?style=for-the-badge\&logo=llama\&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-00D9FF?style=for-the-badge\&logoColor=black)
+![LLMs](https://img.shields.io/badge/LLMs-8A2BE2?style=for-the-badge)
+
+</div>
+
+---
+
+## 🧠 Current Focus
+
+<div align="center">
+
+```text
+LLMs  →  RAG  →  XAI  →  Hallucination Detection
+                ↓
+          Agentic AI Systems
+                ↓
+           Local AI / GGUF
+```
+
+</div>
+
+I'm currently exploring **RAG-based hallucination detection, explainability, local LLM inference and agentic AI workflows**, with a focus on building systems that are practical enough to deploy rather than only demonstrating models.
+
+---
+
+## 🌐 Languages
+
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Gigaberg&theme=tokyonight" />
+</div>
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<img height="182" src="https://github-readme-stats.vercel.app/api?username=Gigaberg&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=C9D1D9"/>
+
+<img height="182" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gigaberg&layout=compact&langs_count=7&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=C9D1D9"/>
+
+<img width="70%" src="https://github-readme-streak-stats.herokuapp.com/?user=Gigaberg&theme=tokyonight&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF&sideNums=C9D1D9&sideLabels=C9D1D9&dates=C9D1D9"/>
+
+</div>
+
+---
+
+## 🐍 Contributions
+
+<div align="center">
+
+![Snake animation](https://raw.githubusercontent.com/Gigaberg/Gigaberg/output/github-contribution-grid-snake-dark.svg)
+
+</div>
+
+---
+
+## 📈 Activity Graph
+
+<div align="center">
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg\&theme=tokyo-night\&hide_border=true\&bg_color=0D1117\&color=00D9FF\&line=00D9FF\&point=C9D1D9\&area=true\&area_color=001a2e)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+</div>
+
+---
+
+<div align="center">
+
+**Building in Bengaluru. Learning constantly. Shipping what I can.**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/Gigaberg) 
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:nayanpanday01@gmail.com)
+
+*"The best way to predict the future is to invent it." — Alan Kay*
+
+</div>

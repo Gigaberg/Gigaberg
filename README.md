@@ -1,14 +1,21 @@
+```bash
+$ npx whoami --nayan-utkarsh
+
+✔ Identity   : Nayan Utkarsh (@Gigaberg)
+✔ Role       : AI/ML Engineer × Full-Stack Developer × AI Systems Builder
+✔ Core Stack : PyTorch · FastAPI · Next.js · ESP32-S3 · Local LLMs (GGUF)
+✔ Mission    : Bridging cutting-edge AI research with resilient production systems
+```
+
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="32px">   **Hey, I'm Nayan Utkarsh**
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1100&color=00D9FF&center=true&vCenter=true&width=700&lines=Building+practical+AI-powered+systems;LLM+%26+RAG+Architectures;Explainable+AI+(XAI)+%2B+Hallucination+Detection;ESP32-S3+Hardware+%2B+Wi-Fi+CSI+Sensing.)](https://git.io/typing-svg)
 
-### AI/ML Engineer  ×  Full-Stack Developer  ×  AI Builder
+<br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code\&weight=600\&size=21\&pause=1100\&color=00D9FF\&center=true\&vCenter=true\&width=700\&lines=AI+%26+ML+Engineer;Full-Stack+Developer;LLM+%26+RAG+Explorer;Agentic+AI+Builder;Explainable+AI+Explorer;Building+AI-powered+systems.)](https://git.io/typing-svg)
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
-[![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:nayanpanday01@gmail.com) 
-[![Views](https://komarev.com/ghpvc/?username=Gigaberg\&color=00D9FF\&style=for-the-badge\&label=PROFILE+VIEWS)](https://github.com/Gigaberg)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
+[![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nayanpanday01@gmail.com) 
+[![Views](https://komarev.com/ghpvc/?username=Gigaberg&color=00D9FF&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/Gigaberg)
 
 </div>
 
@@ -32,7 +39,7 @@
 ## Profile Details
 
 <div align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Gigaberg&theme=github_dark" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Gigaberg&theme=tokyonight" />
 </div>
 
 ---
@@ -126,24 +133,24 @@ A full-stack application for reporting and recovering lost items on campus. Incl
 
 **Languages**
 
-[![Languages](https://skillicons.dev/icons?i=python,c,mysql\&theme=dark)](https://skillicons.dev)
+[![Languages](https://skillicons.dev/icons?i=python,c,cpp&theme=dark)](https://skillicons.dev)
 
 **AI & Machine Learning**
 
-[![AI/ML](https://skillicons.dev/icons?i=pytorch,opencv,huggingface\&theme=dark)](https://skillicons.dev)
+[![AI/ML](https://skillicons.dev/icons?i=pytorch,opencv,huggingface&theme=dark)](https://skillicons.dev)
 
-**Web**
+**Web & Backend**
 
-[![Web](https://skillicons.dev/icons?i=nextjs,react,flask\&theme=dark)](https://skillicons.dev)
+[![Web](https://skillicons.dev/icons?i=fastapi,flask,nextjs,react,nodejs&theme=dark)](https://skillicons.dev)
 
 **Databases & Infrastructure**
 
-[![Data/Infra](https://skillicons.dev/icons?i=mongodb,mysql,docker,git,github\&theme=dark)](https://skillicons.dev)
+[![Data/Infra](https://skillicons.dev/icons?i=mongodb,mysql,docker,git,github&theme=dark)](https://skillicons.dev)
 
 **LLM / AI Systems**
 
-![Llama.cpp](https://img.shields.io/badge/Llama.cpp-000000?style=for-the-badge\&logo=llama\&logoColor=white)
-![RAG](https://img.shields.io/badge/RAG-00D9FF?style=for-the-badge\&logoColor=black)
+![Llama.cpp](https://img.shields.io/badge/Llama.cpp-000000?style=for-the-badge&logo=meta&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-00D9FF?style=for-the-badge&logoColor=black)
 ![LLMs](https://img.shields.io/badge/LLMs-8A2BE2?style=for-the-badge)
 
 </div>
@@ -168,14 +175,6 @@ I'm currently exploring **RAG-based hallucination detection, explainability, loc
 
 ---
 
-## 🌐 Languages
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Gigaberg&theme=tokyonight" />
-</div>
-
----
-
 ## 📊 GitHub Stats
 
 <div align="center">
@@ -184,7 +183,7 @@ I'm currently exploring **RAG-based hallucination detection, explainability, loc
 
 <img height="182" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gigaberg&layout=compact&langs_count=7&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=C9D1D9"/>
 
-<img width="70%" src="https://github-readme-streak-stats.herokuapp.com/?user=Gigaberg&theme=tokyonight&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF&sideNums=C9D1D9&sideLabels=C9D1D9&dates=C9D1D9"/>
+<img width="70%" src="https://streak-stats.demolab.com/?user=Gigaberg&theme=tokyonight&hide_border=true&background=0D1117&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF&sideNums=C9D1D9&sideLabels=C9D1D9&dates=C9D1D9"/>
 
 </div>
 

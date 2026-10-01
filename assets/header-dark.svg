@@ -2,7 +2,7 @@
   <defs>
     <style>
       .font-mono {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Fira Code', Consolas, 'Courier New', monospace;
       }
       .emoji-font {
         font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
@@ -16,20 +16,21 @@
       </feMerge>
     </filter>
 
-    <!-- Clip-path typewriter: Exact character grid alignment -->
-    <clipPath id="clip-name1-dark">
-      <rect x="352.0" y="30" width="0" height="60">
-        <animate attributeName="width" dur="10s" repeatCount="indefinite"
-          values="0; 244.0; 244.0; 0; 0; 0; 0"
-          keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.99; 1" />
+    <!-- Clip 1: reveals full sentence 1 smoothly, then erases -->
+    <clipPath id="clip1-dark">
+      <rect x="95" y="30" width="0" height="60">
+        <animate attributeName="width" dur="11s" repeatCount="indefinite"
+          values="0; 560; 560; 0; 0; 0"
+          keyTimes="0; 0.18; 0.45; 0.49; 0.50; 1" />
       </rect>
     </clipPath>
 
-    <clipPath id="clip-name2-dark">
-      <rect x="352.0" y="30" width="0" height="60">
-        <animate attributeName="width" dur="10s" repeatCount="indefinite"
-          values="0; 0; 0; 154.0; 154.0; 0; 0"
-          keyTimes="0; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
+    <!-- Clip 2: reveals full sentence 2 smoothly, then erases -->
+    <clipPath id="clip2-dark">
+      <rect x="95" y="30" width="0" height="60">
+        <animate attributeName="width" dur="11s" repeatCount="indefinite"
+          values="0; 0; 450; 450; 0; 0"
+          keyTimes="0; 0.50; 0.66; 0.94; 0.98; 1" />
       </rect>
     </clipPath>
   </defs>
@@ -60,28 +61,19 @@
     </text>
   </g>
 
-  <!-- Permanent Greeting Prefix: "Hi there! I'm" with exact 1-space grid -->
-  <text x="100.0" y="72" class="font-mono" font-size="30" font-weight="bold" fill="#FFFFFF">Hi there! I'm</text>
-
-  <!-- Animated Typed Name 1: Nayan Utkarsh -->
-  <g clip-path="url(#clip-name1-dark)">
-    <text x="352.0" y="72" class="font-mono" font-size="30" font-weight="bold" fill="#00D9FF">Nayan Utkarsh</text>
+  <!-- Sentence 1: Continuous single text element - NO ARTIFICIAL GAPS POSSIBLE -->
+  <g clip-path="url(#clip1-dark)">
+    <text x="100" y="72" class="font-mono" font-size="31" font-weight="700">
+      <tspan fill="#FFFFFF">Hi there! I'm </tspan><tspan fill="#00D9FF">Nayan Utkarsh</tspan> <tspan fill="#00D9FF">|<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan>
+    </text>
   </g>
 
-  <!-- Animated Typed Name 2: Gigaberg -->
-  <g clip-path="url(#clip-name2-dark)">
-    <text x="352.0" y="72" class="font-mono" font-size="30" font-weight="bold" fill="#00D9FF">Gigaberg</text>
+  <!-- Sentence 2: Continuous single text element - NO ARTIFICIAL GAPS POSSIBLE -->
+  <g clip-path="url(#clip2-dark)">
+    <text x="100" y="72" class="font-mono" font-size="31" font-weight="700">
+      <tspan fill="#FFFFFF">Hi there! I'm </tspan><tspan fill="#00D9FF">Gigaberg</tspan> <tspan fill="#00D9FF">|<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan>
+    </text>
   </g>
-
-  <!-- Moving + Blinking Terminal Cursor | precisely tracking character grid -->
-  <text y="72" class="font-mono" font-size="30" font-weight="bold" fill="#00D9FF">
-    |
-    <animate attributeName="x" dur="10s" repeatCount="indefinite"
-      values="352.0; 586.0; 586.0; 352.0; 352.0; 496.0; 496.0; 352.0; 352.0"
-      keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
-    <animate attributeName="opacity" dur="0.8s" repeatCount="indefinite"
-      values="1; 0; 1" />
-  </text>
 
   <!-- Role / Subtitle -->
   <text x="100" y="108" class="font-mono" font-size="14.5" font-weight="600" fill="#8B949E">

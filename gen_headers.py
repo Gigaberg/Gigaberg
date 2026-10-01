@@ -7,33 +7,6 @@ random.seed(42)
 WIDTH = 1000
 HEIGHT = 220
 
-# Monospace exact grid
-FONT_SIZE = 30
-CHAR_W = 18.0  # Courier New is exactly 0.6 em -> 0.6 * 30 = 18.0px
-
-START_X = 100.0
-# "Hi there! I'm" has 13 chars
-PREFIX_TEXT = "Hi there! I'm"
-PREFIX_LEN = len(PREFIX_TEXT)  # 13 chars = 234px
-SPACE_W = CHAR_W  # 18px
-
-# Typed name starts exactly 1 space after "Hi there! I'm"
-TYPED_X = START_X + (PREFIX_LEN + 1) * CHAR_W  # 100 + 14*18 = 352.0
-
-NAYAN_LEN = len("Nayan Utkarsh")  # 13 chars = 234px
-NAYAN_END_X = TYPED_X + NAYAN_LEN * CHAR_W  # 352 + 234 = 586.0
-NAYAN_CLIP_W = NAYAN_LEN * CHAR_W + 10  # 244px
-
-GIGA_LEN = len("Gigaberg")  # 8 chars = 144px
-GIGA_END_X = TYPED_X + GIGA_LEN * CHAR_W  # 352 + 144 = 496.0
-GIGA_CLIP_W = GIGA_LEN * CHAR_W + 10  # 154px
-
-print(f"Prefix ends at: {START_X + PREFIX_LEN * CHAR_W}")
-print(f"Space from: {START_X + PREFIX_LEN * CHAR_W} to {TYPED_X} (width={SPACE_W})")
-print(f"Typed name starts at: {TYPED_X}")
-print(f"Nayan Utkarsh ends at: {NAYAN_END_X}")
-print(f"Gigaberg ends at: {GIGA_END_X}")
-
 # Generate constellation nodes
 nodes = []
 for _ in range(8):
@@ -104,7 +77,7 @@ def build_svg(theme='dark'):
   <defs>
     <style>
       .font-mono {{
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'Fira Code', Consolas, 'Courier New', monospace;
       }}
       .emoji-font {{
         font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
@@ -118,20 +91,21 @@ def build_svg(theme='dark'):
       </feMerge>
     </filter>
 
-    <!-- Clip-path typewriter: Exact character grid alignment -->
-    <clipPath id="clip-name1-{theme}">
-      <rect x="{TYPED_X}" y="30" width="0" height="60">
-        <animate attributeName="width" dur="10s" repeatCount="indefinite"
-          values="0; {NAYAN_CLIP_W}; {NAYAN_CLIP_W}; 0; 0; 0; 0"
-          keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.99; 1" />
+    <!-- Clip 1: reveals full sentence 1 smoothly, then erases -->
+    <clipPath id="clip1-{theme}">
+      <rect x="95" y="30" width="0" height="60">
+        <animate attributeName="width" dur="11s" repeatCount="indefinite"
+          values="0; 560; 560; 0; 0; 0"
+          keyTimes="0; 0.18; 0.45; 0.49; 0.50; 1" />
       </rect>
     </clipPath>
 
-    <clipPath id="clip-name2-{theme}">
-      <rect x="{TYPED_X}" y="30" width="0" height="60">
-        <animate attributeName="width" dur="10s" repeatCount="indefinite"
-          values="0; 0; 0; {GIGA_CLIP_W}; {GIGA_CLIP_W}; 0; 0"
-          keyTimes="0; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
+    <!-- Clip 2: reveals full sentence 2 smoothly, then erases -->
+    <clipPath id="clip2-{theme}">
+      <rect x="95" y="30" width="0" height="60">
+        <animate attributeName="width" dur="11s" repeatCount="indefinite"
+          values="0; 0; 450; 450; 0; 0"
+          keyTimes="0; 0.50; 0.66; 0.94; 0.98; 1" />
       </rect>
     </clipPath>
   </defs>
@@ -162,28 +136,19 @@ def build_svg(theme='dark'):
     </text>
   </g>
 
-  <!-- Permanent Greeting Prefix: "Hi there! I'm" with exact 1-space grid -->
-  <text x="{START_X}" y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_primary}">Hi there! I'm</text>
-
-  <!-- Animated Typed Name 1: Nayan Utkarsh -->
-  <g clip-path="url(#clip-name1-{theme})">
-    <text x="{TYPED_X}" y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_accent}">Nayan Utkarsh</text>
+  <!-- Sentence 1: Continuous single text element - NO ARTIFICIAL GAPS POSSIBLE -->
+  <g clip-path="url(#clip1-{theme})">
+    <text x="100" y="72" class="font-mono" font-size="31" font-weight="700">
+      <tspan fill="{text_primary}">Hi there! I'm </tspan><tspan fill="{text_accent}">Nayan Utkarsh</tspan> <tspan fill="{text_accent}">|<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan>
+    </text>
   </g>
 
-  <!-- Animated Typed Name 2: Gigaberg -->
-  <g clip-path="url(#clip-name2-{theme})">
-    <text x="{TYPED_X}" y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_accent}">Gigaberg</text>
+  <!-- Sentence 2: Continuous single text element - NO ARTIFICIAL GAPS POSSIBLE -->
+  <g clip-path="url(#clip2-{theme})">
+    <text x="100" y="72" class="font-mono" font-size="31" font-weight="700">
+      <tspan fill="{text_primary}">Hi there! I'm </tspan><tspan fill="{text_accent}">Gigaberg</tspan> <tspan fill="{text_accent}">|<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan>
+    </text>
   </g>
-
-  <!-- Moving + Blinking Terminal Cursor | precisely tracking character grid -->
-  <text y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_accent}">
-    |
-    <animate attributeName="x" dur="10s" repeatCount="indefinite"
-      values="{TYPED_X}; {NAYAN_END_X}; {NAYAN_END_X}; {TYPED_X}; {TYPED_X}; {GIGA_END_X}; {GIGA_END_X}; {TYPED_X}; {TYPED_X}"
-      keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
-    <animate attributeName="opacity" dur="0.8s" repeatCount="indefinite"
-      values="1; 0; 1" />
-  </text>
 
   <!-- Role / Subtitle -->
   <text x="100" y="108" class="font-mono" font-size="14.5" font-weight="600" fill="{text_secondary}">
@@ -217,4 +182,4 @@ with open('assets/header-dark.svg', 'w', encoding='utf-8') as f:
 with open('assets/header-light.svg', 'w', encoding='utf-8') as f:
     f.write(build_svg('light'))
 
-print("Generated pixel-perfect uniform spacing SVGs successfully!")
+print("Generated continuous single-flow text SVGs successfully!")

@@ -41,7 +41,7 @@
 
 <div align="center">
 
-[![Trophies](https://github-profile-trophy.vercel.app/?username=Gigaberg\&theme=tokyonight\&no-frame=true\&row=1\&column=7\&margin-w=6\&margin-h=6)](https://github.com/ryo-ma/github-profile-trophy)
+[![Trophies](https://github-profile-trophy.vercel.app/?username=Gigaberg&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=6&margin-h=6)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 
@@ -196,7 +196,7 @@ I'm currently exploring **RAG-based hallucination detection, explainability, loc
 
 <div align="center">
 
-[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg&bg_color=0D1117&color=00D9FF&line=00D9FF&point=ffffff&area=true&area_color=00486b&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 </div>
 

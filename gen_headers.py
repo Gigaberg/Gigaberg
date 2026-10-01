@@ -7,34 +7,47 @@ random.seed(42)
 WIDTH = 1000
 HEIGHT = 220
 
+# Monospace exact grid
+FONT_SIZE = 30
+CHAR_W = 18.0  # Courier New is exactly 0.6 em -> 0.6 * 30 = 18.0px
+
+START_X = 100.0
+# "Hi there! I'm" has 13 chars
+PREFIX_TEXT = "Hi there! I'm"
+PREFIX_LEN = len(PREFIX_TEXT)  # 13 chars = 234px
+SPACE_W = CHAR_W  # 18px
+
+# Typed name starts exactly 1 space after "Hi there! I'm"
+TYPED_X = START_X + (PREFIX_LEN + 1) * CHAR_W  # 100 + 14*18 = 352.0
+
+NAYAN_LEN = len("Nayan Utkarsh")  # 13 chars = 234px
+NAYAN_END_X = TYPED_X + NAYAN_LEN * CHAR_W  # 352 + 234 = 586.0
+NAYAN_CLIP_W = NAYAN_LEN * CHAR_W + 10  # 244px
+
+GIGA_LEN = len("Gigaberg")  # 8 chars = 144px
+GIGA_END_X = TYPED_X + GIGA_LEN * CHAR_W  # 352 + 144 = 496.0
+GIGA_CLIP_W = GIGA_LEN * CHAR_W + 10  # 154px
+
+print(f"Prefix ends at: {START_X + PREFIX_LEN * CHAR_W}")
+print(f"Space from: {START_X + PREFIX_LEN * CHAR_W} to {TYPED_X} (width={SPACE_W})")
+print(f"Typed name starts at: {TYPED_X}")
+print(f"Nayan Utkarsh ends at: {NAYAN_END_X}")
+print(f"Gigaberg ends at: {GIGA_END_X}")
+
 # Generate constellation nodes
 nodes = []
-
-# Left side nodes (behind text, sparse)
 for _ in range(8):
-    x = random.uniform(30, 420)
-    y = random.uniform(20, HEIGHT - 20)
-    nodes.append((x, y))
-
-# Middle nodes
+    nodes.append((random.uniform(30, 420), random.uniform(20, HEIGHT - 20)))
 for _ in range(16):
-    x = random.uniform(430, 700)
-    y = random.uniform(15, HEIGHT - 15)
-    nodes.append((x, y))
-
-# Right side nodes (denser, constellation cluster)
+    nodes.append((random.uniform(430, 700), random.uniform(15, HEIGHT - 15)))
 for _ in range(22):
-    x = random.uniform(700, 970)
-    y = random.uniform(15, HEIGHT - 15)
-    nodes.append((x, y))
+    nodes.append((random.uniform(700, 970), random.uniform(15, HEIGHT - 15)))
 
-# Connect nodes based on distance
 edges = []
 for i in range(len(nodes)):
     dists = []
     for j in range(len(nodes)):
-        if i == j:
-            continue
+        if i == j: continue
         dx = nodes[i][0] - nodes[j][0]
         dy = nodes[i][1] - nodes[j][1]
         d = math.sqrt(dx*dx + dy*dy)
@@ -91,7 +104,7 @@ def build_svg(theme='dark'):
   <defs>
     <style>
       .font-mono {{
-        font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+        font-family: 'Courier New', Courier, monospace;
       }}
       .emoji-font {{
         font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
@@ -105,21 +118,19 @@ def build_svg(theme='dark'):
       </feMerge>
     </filter>
 
-    <!-- Clip-path typewriter: 100% browser & Camo compatible, never freezes -->
-    <!-- Name 1: Nayan Utkarsh (width from 0 to 280) -->
+    <!-- Clip-path typewriter: Exact character grid alignment -->
     <clipPath id="clip-name1-{theme}">
-      <rect x="368" y="30" width="0" height="60">
+      <rect x="{TYPED_X}" y="30" width="0" height="60">
         <animate attributeName="width" dur="10s" repeatCount="indefinite"
-          values="0; 280; 280; 0; 0; 0; 0"
+          values="0; {NAYAN_CLIP_W}; {NAYAN_CLIP_W}; 0; 0; 0; 0"
           keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.99; 1" />
       </rect>
     </clipPath>
 
-    <!-- Name 2: Gigaberg (width from 0 to 180) -->
     <clipPath id="clip-name2-{theme}">
-      <rect x="368" y="30" width="0" height="60">
+      <rect x="{TYPED_X}" y="30" width="0" height="60">
         <animate attributeName="width" dur="10s" repeatCount="indefinite"
-          values="0; 0; 0; 180; 180; 0; 0"
+          values="0; 0; 0; {GIGA_CLIP_W}; {GIGA_CLIP_W}; 0; 0"
           keyTimes="0; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
       </rect>
     </clipPath>
@@ -151,24 +162,24 @@ def build_svg(theme='dark'):
     </text>
   </g>
 
-  <!-- Permanent Greeting Prefix: NEVER disappears under any circumstance -->
-  <text x="100" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">Hi there! I'm </text>
+  <!-- Permanent Greeting Prefix: "Hi there! I'm" with exact 1-space grid -->
+  <text x="{START_X}" y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_primary}">Hi there! I'm</text>
 
   <!-- Animated Typed Name 1: Nayan Utkarsh -->
   <g clip-path="url(#clip-name1-{theme})">
-    <text x="368" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">Nayan Utkarsh</text>
+    <text x="{TYPED_X}" y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_accent}">Nayan Utkarsh</text>
   </g>
 
   <!-- Animated Typed Name 2: Gigaberg -->
   <g clip-path="url(#clip-name2-{theme})">
-    <text x="368" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">Gigaberg</text>
+    <text x="{TYPED_X}" y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_accent}">Gigaberg</text>
   </g>
 
-  <!-- Moving + Blinking Terminal Cursor | -->
-  <text y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_accent}">
+  <!-- Moving + Blinking Terminal Cursor | precisely tracking character grid -->
+  <text y="72" class="font-mono" font-size="{FONT_SIZE}" font-weight="bold" fill="{text_accent}">
     |
     <animate attributeName="x" dur="10s" repeatCount="indefinite"
-      values="368; 628; 628; 368; 368; 538; 538; 368; 368"
+      values="{TYPED_X}; {NAYAN_END_X}; {NAYAN_END_X}; {TYPED_X}; {TYPED_X}; {GIGA_END_X}; {GIGA_END_X}; {TYPED_X}; {TYPED_X}"
       keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
     <animate attributeName="opacity" dur="0.8s" repeatCount="indefinite"
       values="1; 0; 1" />
@@ -206,4 +217,4 @@ with open('assets/header-dark.svg', 'w', encoding='utf-8') as f:
 with open('assets/header-light.svg', 'w', encoding='utf-8') as f:
     f.write(build_svg('light'))
 
-print("Generated bulletproof clip-path typewriter SVGs successfully!")
+print("Generated pixel-perfect uniform spacing SVGs successfully!")

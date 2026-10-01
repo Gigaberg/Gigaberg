@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Gigaberg/Gigaberg/main/assets/header-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Gigaberg/Gigaberg/main/assets/header-light.svg?v=3">
-  <img alt="Hi there! I'm Nayan Utkarsh" src="https://raw.githubusercontent.com/Gigaberg/Gigaberg/main/assets/header-dark.svg?v=3" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Gigaberg/Gigaberg/main/assets/header-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Gigaberg/Gigaberg/main/assets/header-light.svg?v=4">
+  <img alt="Hi there! I'm Nayan Utkarsh" src="https://raw.githubusercontent.com/Gigaberg/Gigaberg/main/assets/header-dark.svg?v=4" width="100%">
 </picture>
 
 <br/><br/>

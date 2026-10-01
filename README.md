@@ -1,13 +1,6 @@
-```bash
-$ npx whoami --nayan-utkarsh
-
-✔ Identity   : Nayan Utkarsh (@Gigaberg)
-✔ Role       : AI/ML Engineer × Full-Stack Developer × AI Systems Builder
-✔ Core Stack : PyTorch · FastAPI · Next.js · ESP32-S3 · Local LLMs (GGUF)
-✔ Mission    : Bridging cutting-edge AI research with resilient production systems
-```
-
 <div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,70:00486b,100:00D9FF&height=220&section=header&text=Nayan%20Utkarsh&fontSize=62&fontColor=ffffff&fontAlignY=36&desc=AI%2FML%20Engineer%20%C2%B7%20Full-Stack%20Developer%20%C2%B7%20Systems%20Builder&descAlignY=58&descAlign=50&descSize=18&theme=tokyonight" width="100%"/>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1100&color=00D9FF&center=true&vCenter=true&width=700&lines=Building+practical+AI-powered+systems;LLM+%26+RAG+Architectures;Explainable+AI+(XAI)+%2B+Hallucination+Detection;ESP32-S3+Hardware+%2B+Wi-Fi+CSI+Sensing.)](https://git.io/typing-svg)
 
@@ -15,7 +8,7 @@ $ npx whoami --nayan-utkarsh
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
 [![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nayanpanday01@gmail.com) 
-[![Views](https://komarev.com/ghpvc/?username=Gigaberg&color=00D9FF&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/Gigaberg)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gigaberg)
 
 </div>
 

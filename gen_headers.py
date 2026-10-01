@@ -2,20 +2,24 @@ import random
 import math
 import os
 
-random.seed(42)
+random.seed(1337)
 
 WIDTH = 1000
 HEIGHT = 220
 
-# Generate constellation nodes
-nodes = []
-for _ in range(8):
-    nodes.append((random.uniform(30, 420), random.uniform(20, HEIGHT - 20)))
-for _ in range(16):
-    nodes.append((random.uniform(430, 700), random.uniform(15, HEIGHT - 15)))
-for _ in range(22):
-    nodes.append((random.uniform(700, 970), random.uniform(15, HEIGHT - 15)))
+# Create nodes:
+# 1. Very top edge sparse accents (y <= 25, well above any text)
+nodes = [
+    (35, 22), (130, 18), (250, 16), (370, 20), (460, 22)
+]
 
+# 2. Dense, beautiful neural / constellation cluster on the RIGHT (x: 520 to 975)
+for _ in range(32):
+    x = random.uniform(530, 975)
+    y = random.uniform(18, HEIGHT - 18)
+    nodes.append((x, y))
+
+# Connect nodes based on distance
 edges = []
 for i in range(len(nodes)):
     dists = []
@@ -24,13 +28,16 @@ for i in range(len(nodes)):
         dx = nodes[i][0] - nodes[j][0]
         dy = nodes[i][1] - nodes[j][1]
         d = math.sqrt(dx*dx + dy*dy)
-        if 40 < d < 140:
+        # Connect nearby nodes
+        if 35 < d < 135:
             dists.append((d, j))
     dists.sort()
     for d, j in dists[:4]:
         edge = (min(i, j), max(i, j))
         if edge not in edges:
             edges.append(edge)
+
+print(f"Nodes: {len(nodes)}, Edges: {len(edges)}")
 
 def build_svg(theme='dark'):
     if theme == 'dark':
@@ -39,9 +46,11 @@ def build_svg(theme='dark'):
         text_accent = "#00D9FF"
         text_secondary = "#8B949E"
         text_muted = "#58A6FF"
-        node_fill = "#00D9FF"
-        line_stroke = "#00D9FF"
-        line_base_opacity = 0.22
+        # Soft starry white/silver graphic so it never clashes with cyan text!
+        node_fill = "#FFFFFF"
+        node_glow = "#FFFFFF"
+        line_stroke = "#FFFFFF"
+        line_base_opacity = 0.18
     else:
         bg = "#FFFFFF"
         text_primary = "#1F2328"
@@ -49,27 +58,26 @@ def build_svg(theme='dark'):
         text_secondary = "#656D76"
         text_muted = "#0969DA"
         node_fill = "#4B5563"
+        node_glow = "#6B7280"
         line_stroke = "#6B7280"
-        line_base_opacity = 0.28
+        line_base_opacity = 0.22
 
     edges_lines = []
     for a, b in edges:
         x1, y1 = nodes[a]
         x2, y2 = nodes[b]
-        mid_x = (x1 + x2) / 2
-        op = line_base_opacity * 0.4 if mid_x < 420 else line_base_opacity
-        edges_lines.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{line_stroke}" stroke-opacity="{op:.2f}" stroke-width="1.2"/>')
+        edges_lines.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{line_stroke}" stroke-opacity="{line_base_opacity:.2f}" stroke-width="1.1"/>')
 
     nodes_circles = []
     for i, (x, y) in enumerate(nodes):
-        r = random.uniform(2.5, 4.0)
-        dur = random.uniform(2.2, 4.0)
-        delay = (i * 0.17) % 3.0
-        op = 0.35 if x < 420 else 0.85
+        r = random.uniform(2.4, 3.8)
+        dur = random.uniform(2.4, 4.2)
+        delay = (i * 0.18) % 3.0
+        op = 0.45 if x < 500 else 0.75
         nodes_circles.append(
             f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{node_fill}" opacity="{op}">'
-            f'<animate attributeName="r" values="{r:.1f};{r+1.8:.1f};{r:.1f}" dur="{dur:.1f}s" repeatCount="indefinite" begin="{delay:.1f}s"/>'
-            f'<animate attributeName="opacity" values="{op*0.6:.2f};{min(1.0, op*1.4):.2f};{op*0.6:.2f}" dur="{dur:.1f}s" repeatCount="indefinite" begin="{delay:.1f}s"/>'
+            f'<animate attributeName="r" values="{r:.1f};{r+1.6:.1f};{r:.1f}" dur="{dur:.1f}s" repeatCount="indefinite" begin="{delay:.1f}s"/>'
+            f'<animate attributeName="opacity" values="{op*0.6:.2f};{min(1.0, op*1.3):.2f};{op*0.6:.2f}" dur="{dur:.1f}s" repeatCount="indefinite" begin="{delay:.1f}s"/>'
             f'</circle>'
         )
 
@@ -84,7 +92,7 @@ def build_svg(theme='dark'):
       }}
     </style>
     <filter id="glow-{theme}" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feGaussianBlur stdDeviation="1.8" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -113,7 +121,7 @@ def build_svg(theme='dark'):
   <!-- Background -->
   <rect width="{WIDTH}" height="{HEIGHT}" fill="{bg}" rx="8"/>
 
-  <!-- Neural / Constellation Mesh -->
+  <!-- Neural / Constellation Mesh: Positioned on the right & top edge, clean starry white -->
   <g id="edges">
     {''.join(edges_lines)}
   </g>
@@ -136,14 +144,14 @@ def build_svg(theme='dark'):
     </text>
   </g>
 
-  <!-- Sentence 1: Continuous single text element - NO ARTIFICIAL GAPS POSSIBLE -->
+  <!-- Sentence 1: Continuous single text element with crisp contrast -->
   <g clip-path="url(#clip1-{theme})">
     <text x="100" y="72" class="font-mono" font-size="31" font-weight="700">
       <tspan fill="{text_primary}">Hi there! I'm </tspan><tspan fill="{text_accent}">Nayan Utkarsh</tspan> <tspan fill="{text_accent}">|<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan>
     </text>
   </g>
 
-  <!-- Sentence 2: Continuous single text element - NO ARTIFICIAL GAPS POSSIBLE -->
+  <!-- Sentence 2: Continuous single text element with crisp contrast -->
   <g clip-path="url(#clip2-{theme})">
     <text x="100" y="72" class="font-mono" font-size="31" font-weight="700">
       <tspan fill="{text_primary}">Hi there! I'm </tspan><tspan fill="{text_accent}">Gigaberg</tspan> <tspan fill="{text_accent}">|<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan>
@@ -182,4 +190,4 @@ with open('assets/header-dark.svg', 'w', encoding='utf-8') as f:
 with open('assets/header-light.svg', 'w', encoding='utf-8') as f:
     f.write(build_svg('light'))
 
-print("Generated continuous single-flow text SVGs successfully!")
+print("Generated repositioned white graphic SVGs successfully!")

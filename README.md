@@ -37,16 +37,6 @@
 
 ---
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-
-[![Trophies](https://github-profile-trophy.vercel.app/?username=Gigaberg&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=6&margin-h=6)](https://github.com/ryo-ma/github-profile-trophy)
-
-</div>
-
----
-
 ## 🔥 Featured Projects
 
 <table>
@@ -192,24 +182,40 @@ I'm currently exploring **RAG-based hallucination detection, explainability, loc
 
 ---
 
-## 📈 Activity Graph
-
-<div align="center">
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg&bg_color=0D1117&color=00D9FF&line=00D9FF&point=ffffff&area=true&area_color=00486b&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-</div>
-
----
-
-<div align="center">
-
-**Building in Bengaluru. Learning constantly. Shipping what I can.**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/Gigaberg) 
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:nayanpanday01@gmail.com)
-
-*"The best way to predict the future is to invent it." — Alan Kay*
-
-</div>
+## 📈 Activity Graph
+
+<div align="center">
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Gigaberg&bg_color=0D1117&color=00D9FF&line=00D9FF&point=ffffff&area=true&area_color=00486b&hide_border=true&radius=8)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+</div>
+
+---
+
+## 🚧 Now Building
+
+<div align="center">
+
+| Project | Stack | Status |
+|---|---|---|
+| 🔬 RAG Hallucination Detector | Python · LangChain · FAISS · SHAP | 🟡 In Progress |
+| 📡 Techflix CSI Dashboard | ESP32-S3 · FastAPI · Chart.js | 🟢 Active |
+| 🌫️ Bengaluru AQI XAI Platform | XGBoost · SHAP · Next.js | 🟢 Active |
+
+</div>
+
+---
+
+<div align="center">
+
+**Building in Bengaluru. Learning constantly. Shipping what I can.**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nayanutkarsh/) 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Gigaberg) 
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nayanpanday01@gmail.com)
+
+*"The best way to predict the future is to invent it." — Alan Kay*
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D9FF,30:00486b,100:0D1117&height=120&section=footer" width="100%"/>
+
+</div>

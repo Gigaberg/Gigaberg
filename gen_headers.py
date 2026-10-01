@@ -87,7 +87,7 @@ def build_svg(theme='dark'):
             f'</circle>'
         )
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" height="{HEIGHT}">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" height="{HEIGHT}">
   <defs>
     <style>
       .font-mono {{
@@ -105,17 +105,24 @@ def build_svg(theme='dark'):
       </feMerge>
     </filter>
 
-    <!-- Reliable unified 12s master loop (no event-chaining, loops forever) -->
-    <path id="type-path-0-{theme}">
-      <animate attributeName="d" dur="12s" repeatCount="indefinite"
-        values="m368,72 h0 ; m368,72 h320 ; m368,72 h320 ; m368,72 h0 ; m368,72 h0 ; m368,72 h0"
-        keyTimes="0; 0.10; 0.44; 0.49; 0.98; 1" />
-    </path>
-    <path id="type-path-1-{theme}">
-      <animate attributeName="d" dur="12s" repeatCount="indefinite"
-        values="m368,72 h0 ; m368,72 h0 ; m368,72 h240 ; m368,72 h240 ; m368,72 h0 ; m368,72 h0"
-        keyTimes="0; 0.50; 0.60; 0.93; 0.98; 1" />
-    </path>
+    <!-- Clip-path typewriter: 100% browser & Camo compatible, never freezes -->
+    <!-- Name 1: Nayan Utkarsh (width from 0 to 280) -->
+    <clipPath id="clip-name1-{theme}">
+      <rect x="368" y="30" width="0" height="60">
+        <animate attributeName="width" dur="10s" repeatCount="indefinite"
+          values="0; 280; 280; 0; 0; 0; 0"
+          keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.99; 1" />
+      </rect>
+    </clipPath>
+
+    <!-- Name 2: Gigaberg (width from 0 to 180) -->
+    <clipPath id="clip-name2-{theme}">
+      <rect x="368" y="30" width="0" height="60">
+        <animate attributeName="width" dur="10s" repeatCount="indefinite"
+          values="0; 0; 0; 180; 180; 0; 0"
+          keyTimes="0; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
+      </rect>
+    </clipPath>
   </defs>
 
   <!-- Background -->
@@ -144,22 +151,27 @@ def build_svg(theme='dark'):
     </text>
   </g>
 
-  <!-- Fixed Greeting Prefix (Always visible on screen, never disappears) -->
-  <text x="100" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
-    Hi there! I'm 
-  </text>
+  <!-- Permanent Greeting Prefix: NEVER disappears under any circumstance -->
+  <text x="100" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">Hi there! I'm </text>
 
-  <!-- Dynamic Typing Sequence: Swaps between Nayan Utkarsh and Gigaberg -->
-  <text class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">
-    <textPath href="#type-path-0-{theme}" xlink:href="#type-path-0-{theme}">
-      Nayan Utkarsh |
-    </textPath>
-  </text>
+  <!-- Animated Typed Name 1: Nayan Utkarsh -->
+  <g clip-path="url(#clip-name1-{theme})">
+    <text x="368" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">Nayan Utkarsh</text>
+  </g>
 
-  <text class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">
-    <textPath href="#type-path-1-{theme}" xlink:href="#type-path-1-{theme}">
-      Gigaberg |
-    </textPath>
+  <!-- Animated Typed Name 2: Gigaberg -->
+  <g clip-path="url(#clip-name2-{theme})">
+    <text x="368" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">Gigaberg</text>
+  </g>
+
+  <!-- Moving + Blinking Terminal Cursor | -->
+  <text y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_accent}">
+    |
+    <animate attributeName="x" dur="10s" repeatCount="indefinite"
+      values="368; 628; 628; 368; 368; 538; 538; 368; 368"
+      keyTimes="0; 0.12; 0.44; 0.49; 0.50; 0.62; 0.93; 0.98; 1" />
+    <animate attributeName="opacity" dur="0.8s" repeatCount="indefinite"
+      values="1; 0; 1" />
   </text>
 
   <!-- Role / Subtitle -->
@@ -194,4 +206,4 @@ with open('assets/header-dark.svg', 'w', encoding='utf-8') as f:
 with open('assets/header-light.svg', 'w', encoding='utf-8') as f:
     f.write(build_svg('light'))
 
-print("Updated and regenerated assets/header-dark.svg and assets/header-light.svg successfully!")
+print("Generated bulletproof clip-path typewriter SVGs successfully!")

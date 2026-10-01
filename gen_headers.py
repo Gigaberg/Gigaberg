@@ -105,21 +105,16 @@ def build_svg(theme='dark'):
       </feMerge>
     </filter>
 
-    <!-- Typing animation paths -->
+    <!-- Reliable unified 12s master loop (no event-chaining, loops forever) -->
     <path id="type-path-0-{theme}">
-      <animate id="t0-{theme}" attributeName="d" begin="0s;t2-{theme}.end" dur="5s" fill="remove"
-        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
-        keyTimes="0; 0.50; 0.85; 1" />
+      <animate attributeName="d" dur="12s" repeatCount="indefinite"
+        values="m368,72 h0 ; m368,72 h320 ; m368,72 h320 ; m368,72 h0 ; m368,72 h0 ; m368,72 h0"
+        keyTimes="0; 0.10; 0.44; 0.49; 0.98; 1" />
     </path>
     <path id="type-path-1-{theme}">
-      <animate id="t1-{theme}" attributeName="d" begin="t0-{theme}.end" dur="4.5s" fill="remove"
-        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
-        keyTimes="0; 0.50; 0.85; 1" />
-    </path>
-    <path id="type-path-2-{theme}">
-      <animate id="t2-{theme}" attributeName="d" begin="t1-{theme}.end" dur="5.5s" fill="remove"
-        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
-        keyTimes="0; 0.50; 0.85; 1" />
+      <animate attributeName="d" dur="12s" repeatCount="indefinite"
+        values="m368,72 h0 ; m368,72 h0 ; m368,72 h240 ; m368,72 h240 ; m368,72 h0 ; m368,72 h0"
+        keyTimes="0; 0.50; 0.60; 0.93; 0.98; 1" />
     </path>
   </defs>
 
@@ -149,22 +144,21 @@ def build_svg(theme='dark'):
     </text>
   </g>
 
-  <!-- Animated Typing Texts (Chained in Sequence) -->
-  <text class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
+  <!-- Fixed Greeting Prefix (Always visible on screen, never disappears) -->
+  <text x="100" y="72" class="font-mono" font-size="32" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
+    Hi there! I'm 
+  </text>
+
+  <!-- Dynamic Typing Sequence: Swaps between Nayan Utkarsh and Gigaberg -->
+  <text class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">
     <textPath href="#type-path-0-{theme}" xlink:href="#type-path-0-{theme}">
-      Hi there! I'm Nayan Utkarsh |
+      Nayan Utkarsh |
     </textPath>
   </text>
 
   <text class="font-mono" font-size="32" font-weight="700" fill="{text_accent}" letter-spacing="-0.5">
     <textPath href="#type-path-1-{theme}" xlink:href="#type-path-1-{theme}">
-      Hi there! I'm Gigaberg |
-    </textPath>
-  </text>
-
-  <text class="font-mono" font-size="28" font-weight="700" fill="{text_primary}" letter-spacing="-0.5">
-    <textPath href="#type-path-2-{theme}" xlink:href="#type-path-2-{theme}">
-      AI/ML Engineer &amp; Systems Builder |
+      Gigaberg |
     </textPath>
   </text>
 
@@ -200,4 +194,4 @@ with open('assets/header-dark.svg', 'w', encoding='utf-8') as f:
 with open('assets/header-light.svg', 'w', encoding='utf-8') as f:
     f.write(build_svg('light'))
 
-print("Generated dynamic typing header SVGs successfully!")
+print("Updated and regenerated assets/header-dark.svg and assets/header-light.svg successfully!")

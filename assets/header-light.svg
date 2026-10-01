@@ -16,21 +16,16 @@
       </feMerge>
     </filter>
 
-    <!-- Typing animation paths -->
+    <!-- Reliable unified 12s master loop (no event-chaining, loops forever) -->
     <path id="type-path-0-light">
-      <animate id="t0-light" attributeName="d" begin="0s;t2-light.end" dur="5s" fill="remove"
-        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
-        keyTimes="0; 0.50; 0.85; 1" />
+      <animate attributeName="d" dur="12s" repeatCount="indefinite"
+        values="m368,72 h0 ; m368,72 h320 ; m368,72 h320 ; m368,72 h0 ; m368,72 h0 ; m368,72 h0"
+        keyTimes="0; 0.10; 0.44; 0.49; 0.98; 1" />
     </path>
     <path id="type-path-1-light">
-      <animate id="t1-light" attributeName="d" begin="t0-light.end" dur="4.5s" fill="remove"
-        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
-        keyTimes="0; 0.50; 0.85; 1" />
-    </path>
-    <path id="type-path-2-light">
-      <animate id="t2-light" attributeName="d" begin="t1-light.end" dur="5.5s" fill="remove"
-        values="m102,72 h0 ; m102,72 h580 ; m102,72 h580 ; m102,72 h0"
-        keyTimes="0; 0.50; 0.85; 1" />
+      <animate attributeName="d" dur="12s" repeatCount="indefinite"
+        values="m368,72 h0 ; m368,72 h0 ; m368,72 h240 ; m368,72 h240 ; m368,72 h0 ; m368,72 h0"
+        keyTimes="0; 0.50; 0.60; 0.93; 0.98; 1" />
     </path>
   </defs>
 
@@ -60,22 +55,21 @@
     </text>
   </g>
 
-  <!-- Animated Typing Texts (Chained in Sequence) -->
-  <text class="font-mono" font-size="32" font-weight="700" fill="#1F2328" letter-spacing="-0.5">
+  <!-- Fixed Greeting Prefix (Always visible on screen, never disappears) -->
+  <text x="100" y="72" class="font-mono" font-size="32" font-weight="700" fill="#1F2328" letter-spacing="-0.5">
+    Hi there! I'm 
+  </text>
+
+  <!-- Dynamic Typing Sequence: Swaps between Nayan Utkarsh and Gigaberg -->
+  <text class="font-mono" font-size="32" font-weight="700" fill="#0969DA" letter-spacing="-0.5">
     <textPath href="#type-path-0-light" xlink:href="#type-path-0-light">
-      Hi there! I'm Nayan Utkarsh |
+      Nayan Utkarsh |
     </textPath>
   </text>
 
   <text class="font-mono" font-size="32" font-weight="700" fill="#0969DA" letter-spacing="-0.5">
     <textPath href="#type-path-1-light" xlink:href="#type-path-1-light">
-      Hi there! I'm Gigaberg |
-    </textPath>
-  </text>
-
-  <text class="font-mono" font-size="28" font-weight="700" fill="#1F2328" letter-spacing="-0.5">
-    <textPath href="#type-path-2-light" xlink:href="#type-path-2-light">
-      AI/ML Engineer &amp; Systems Builder |
+      Gigaberg |
     </textPath>
   </text>
 
